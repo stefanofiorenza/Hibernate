@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+
+<class name="corso.hibernate.demo.primo.model.CD" table="cd">
+        <id name="PrimaryKey" column="idCd">
+            <generator class="native"/>
+        </id>
+        <property name="artist" column="Artista" type="string"/>
+        <property name="company" column="Etichetta" type="string"/>
+   	 	<property name="price" column="Prezzo" type="double"/>
+   	 	<property name="title" column="Titolo" type="string"/>
+   	   	<property name="country" column="Nazione" type="string"/>
+   	    <property name="year" column="Anno" type="int"/>
+   	    <property name="quantity" column="quantita" type="int"/>
+  </class> 
+
+</hibernate-mapping>

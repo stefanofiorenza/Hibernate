@@ -1,0 +1,9 @@
+1) Install MySql
+
+2) setup credentials
+
+3) create DBs:
+	jpa-demo-basic
+	jpa-demo-orm
+	jpa-demo-jta
+	jpa-demo-queries

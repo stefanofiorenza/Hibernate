@@ -7,4 +7,68 @@
   </parent>
   <artifactId>JPA-300-Transactions</artifactId>
   <name>JPA-300-Transactions</name>
+  <packaging>pom</packaging>
+  
+  <modules>
+  	<module>JPA-305-Common</module>
+  	<module>JPA-310-Demarcation</module>
+  	<module>JPA-320-Concurrency</module>
+  	<module>JPA-330-PersistenceContext</module>  	
+  </modules>
+  
+  
+     <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>	
+        <version.spring>5.1.7.RELEASE</version.spring>	
+     </properties>
+  <dependencies>
+  
+  	<!-- Spring core dependencies -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${version.spring}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${version.spring}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${version.spring}</version>
+			</dependency>
+					
+		<!--  Spring persistence modules -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${version.spring}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${version.spring}</version>
+			</dependency>
+		
+		  <dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-tx</artifactId>
+    		<version>${version.spring}</version>
+ 		 </dependency>
+ 		 
+ 		</dependencies> 
+ 		
 </project>

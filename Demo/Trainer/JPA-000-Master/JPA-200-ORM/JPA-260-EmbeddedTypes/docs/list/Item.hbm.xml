@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="tipi.lista">
+
+<class name="Item"
+	   table="articoli" lazy="true">
+
+	<!-- Common id property. -->
+	<id name="id"
+		type="long"
+		column="ItemID">
+		<generator class="native"/>
+	</id>
+
+	<!-- A versioned entity. -->
+	
+	<!-- Name of the item is immutable. -->
+	<property   name="name"
+				type="string"
+				column="Nome"
+				length="255"
+				not-null="true"
+				update="false"/>
+				
+	<property   name="description"
+				type="string"
+				column="Descrizione"
+				length="255"
+				not-null="true"
+				update="false"/>
+				
+		<list name="images" lazy="true" table="immagini">
+			<key column="FKArticolo"/>
+			<index column="POSITION"/>
+			<element type="string" column="PathImmagine" not-null="true"/>
+		</list>
+
+	
+	
+
+</class>
+
+
+</hibernate-mapping>

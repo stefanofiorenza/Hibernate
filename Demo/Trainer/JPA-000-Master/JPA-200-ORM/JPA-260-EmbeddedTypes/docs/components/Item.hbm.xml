@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+			"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="componenti">
+
+<class name="Item"
+	   table="articoli" lazy="true">
+
+	<!-- Common id property. -->
+	<id name="id"
+		type="long"
+		column="ItemID">
+		<generator class="native"/>
+	</id>
+
+	<!-- A versioned entity. -->
+	
+	<!-- Name of the item is immutable. -->
+	<property   name="name"
+				type="string"
+				column="Nome"
+				length="255"
+				not-null="true"
+				update="false"/>
+				
+	<property   name="description"
+				type="string"
+				column="Descrizione"
+				length="255"
+				not-null="true"
+				update="false"/>
+		
+	
+			
+	<set name="images"
+			lazy="true"
+			table="immagini">
+
+		<key column="FKArticoli"/>
+
+		<composite-element class="Image">
+			<property name="nomeImmagine" column="NomeImmagine" not-null="true"/>
+			<property name="pathImmagine" column="PathImmagine" not-null="true"/>
+			<property name="sizeX" column="SIZEX" not-null="true"/>
+			<property name="sizeY" column="SIZEY" not-null="true"/>
+		</composite-element>
+
+</set>
+	
+	
+
+</class>
+
+
+</hibernate-mapping>

@@ -1,30 +1,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <parent>
     <groupId>com.knits.jpa</groupId>
     <artifactId>JPA-000-Master</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>JPA-200-ORM</artifactId>
-  <name>JPA-200-ORM</name>
-  <packaging>pom</packaging>
+  
+  <artifactId>JPA-100-Basic</artifactId>
+  <packaging>pom</packaging>  
+  <name>JPA-100-Basic</name>
   
   <modules>
-  	<module>JPA-210-TypesMapping</module>
-  	<module>JPA-220-OneToOne</module>  
-  	<module>JPA-230-OneToMany</module>
-  	<module>JPA-240-ManyToMany</module>  
-  	<module>JPA-250-Inheritance</module>
-  	<module>JPA-260-EmbeddedTypes</module>
-  	<module>JPA-270-CompositeId</module>
+  	<module>JPA-110-HibernateConfig</module>
+  	<module>JPA-120-JpaConfig</module>
   </modules>
   
-    <dependencies>
+  <dependencies>
   	<dependency>
   		<groupId>com.knits.jpa</groupId>
   		<artifactId>JPA-010-Common</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>
-  
+
 </project>

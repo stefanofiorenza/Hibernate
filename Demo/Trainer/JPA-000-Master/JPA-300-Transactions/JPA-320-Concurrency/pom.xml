@@ -2,27 +2,16 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.knits.jpa</groupId>
-    <artifactId>JPA-000-Master</artifactId>
+    <artifactId>JPA-300-Transactions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>JPA-200-ORM</artifactId>
-  <name>JPA-200-ORM</name>
-  <packaging>pom</packaging>
-  
-  <modules>
-  	<module>JPA-210-TypesMapping</module>
-  	<module>JPA-220-OneToOne</module>  
-  	<module>JPA-230-OneToMany</module>
-  	<module>JPA-240-ManyToMany</module>  
-  	<module>JPA-250-Inheritance</module>
-  	<module>JPA-260-EmbeddedTypes</module>
-  	<module>JPA-270-CompositeId</module>
-  </modules>
+  <artifactId>JPA-320-Concurrency</artifactId>
+  <name>JPA-320-Concurrency</name>
   
     <dependencies>
   	<dependency>
   		<groupId>com.knits.jpa</groupId>
-  		<artifactId>JPA-010-Common</artifactId>
+  		<artifactId>JPA-305-Common</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
   </dependencies>
