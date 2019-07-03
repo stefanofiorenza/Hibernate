@@ -16,7 +16,6 @@ import com.knits.jpa.common.model.AbstractEntity;
 public class User extends AbstractEntity {
 
 	private Long id = null;
-	//private int version;
 	private String firstname;
 	private String lastname;
 	private String username;
@@ -28,17 +27,13 @@ public class User extends AbstractEntity {
 
 	public void setBillingAddress(Address billingAddress) {
 		this.billingAddress = billingAddress;
-		// per bidirezionale
+		// bidirectional
 		/*
 		this.billingAddress.setUtente(this);
 		*/
 	}
 
 
-	
-	public void increaseRanking() {
-		setRanking(getRanking() + 1);
-	}
 
 	
 

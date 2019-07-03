@@ -13,7 +13,8 @@
   	<module>JPA-305-Common</module>
   	<module>JPA-310-Demarcation</module>
   	<module>JPA-320-Concurrency</module>
-  	<module>JPA-330-PersistenceContext</module>  	
+  	<module>JPA-330-PersistenceContext</module>
+  	<module>JPA-315-JSE-Transactions</module>
   </modules>
   
   

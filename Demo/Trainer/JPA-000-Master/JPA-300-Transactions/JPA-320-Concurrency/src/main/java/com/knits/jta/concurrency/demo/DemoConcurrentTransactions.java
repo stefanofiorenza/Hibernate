@@ -13,22 +13,29 @@ import com.knits.jta.concurrency.services.SeatReservationService;
 
 public class DemoConcurrentTransactions {
 
+	private static int noThreads=5;
+	
 	public static void main(String[] args) {
 		ApplicationContext context = new AnnotationConfigApplicationContext(DemoConfig.class);
 		
-		ExecutorService threadPool = Executors.newFixedThreadPool(5);
+		ExecutorService threadPool = Executors.newFixedThreadPool(noThreads);
 		
 		
 		//1) Every user request is processed in a new thread 
-		threadPool.submit(new Runnable() {			
-			@Override
-			public void run() {
-				SeatReservationService seatReservationService =context.getBean(SeatReservationService.class);
-				seatReservationService.insertReservationData(Mocks.mockUser());
-				seatReservationService.executePayment();
-				seatReservationService.reserveSeat(Mocks.mockReservedSeat());
-			}
-		});
+		for (int i=0; i<noThreads; i++){
+			
+			threadPool.submit(new Runnable() {			
+				@Override
+				public void run() {
+					SeatReservationService seatReservationService =context.getBean(SeatReservationService.class);
+					seatReservationService.insertReservationData(Mocks.mockUser());
+					seatReservationService.executePayment();
+					seatReservationService.reserveSeat(Mocks.mockReservedSeat());
+				}
+			});
+			
+		}
+		
 
 		
 		 AppContextUtil.closeSilently(context);

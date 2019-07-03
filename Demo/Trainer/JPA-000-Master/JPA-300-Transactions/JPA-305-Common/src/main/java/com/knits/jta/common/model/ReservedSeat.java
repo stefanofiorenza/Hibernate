@@ -12,7 +12,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "CD")
+@Table(name = "ReservedSeat")
 @Data
 public class ReservedSeat extends AbstractEntity {
 		

@@ -1,5 +1,8 @@
 package com.knits.jpa.orm.demos;
 
+import java.sql.Blob;
+import java.sql.Clob;
+
 import lombok.extern.slf4j.Slf4j;
 
 import com.knits.jpa.common.utils.BasicDao;
@@ -29,9 +32,22 @@ public class Demo02AdvancedTypes {
 	
 	
 	private static EntityWithAdvancedTypes mockEntity(){
-		EntityWithAdvancedTypes entity = new EntityWithAdvancedTypes();
+		String data ="Some test data";
 		
+		EntityWithAdvancedTypes entity = new EntityWithAdvancedTypes();
+		entity.setBinary(data.getBytes());
+		entity.setBlob(dataAsBlob());
+		entity.setClob(dataAsClob());
 		return entity;
+	}
+	
+	private static Clob dataAsClob() {
+	
+	}
+
+
+	private static Blob dataAsBlob (){
+		
 	}
 
 }

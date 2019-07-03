@@ -1,22 +1,25 @@
 package com.knits.jta.demo.app.service;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.knits.jta.common.model.Address;
+import com.knits.jta.common.model.User;
 
 @Service
-@Transactional
-public class AddressService {
+public class UserService {
 
 	@PersistenceContext
-	private EntityManager em;
+	private EntityManagerFactory emf;
 	
 	
-	public void saveAddressData(Address address){
-		em.persist(address);		
+	public void saveUserData(User userInStep1){
+		emf.createEntityManager();
+		
+		
+		emf.close();
 	}
 }

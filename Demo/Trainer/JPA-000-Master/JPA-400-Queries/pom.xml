@@ -5,6 +5,12 @@
     <artifactId>JPA-000-Master</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>JPA-420-Criteria</artifactId>
-  <name>JPA-420-Criteria</name>
+  <artifactId>JPA-400-Queries</artifactId>
+  <name>JPA-400-Queries</name>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>JPA-410-JPQL</module>
+  	<module>JPA-420-Criteria</module>
+  	<module>JPA-405-Common</module>
+  </modules>
 </project>

@@ -13,7 +13,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>	
 	
 		<hibernate.version>5.2.9.Final</hibernate.version>
-		<mysql.connector.driver></mysql.connector.driver>
+		<mysql.connector.driver>5.3.5</mysql.connector.driver>
 		<derbyclient.version>10.12.1.1</derbyclient.version>
 		
 			<!-- Loggers -->
@@ -133,14 +133,11 @@
 	
 	
   	<modules>
-    	<module>JPA-110-Configuration</module>
+  		<module>JPA-010-Common</module>
+    	<module>JPA-100-Basic</module>
     	<module>JPA-200-ORM</module>
     	<module>JPA-300-Transactions</module>
-    	<module>JPA-410-HQL</module>
-    	<module>JPA-420-Criteria</module>
-    	<module>JPA-130-SessionApi</module>
-    	<module>JPA-100-Basic</module>
-    	<module>JPA-010-Common</module>
+    	<module>JPA-400-Queries</module>    	
   	</modules>
 	
 </project>

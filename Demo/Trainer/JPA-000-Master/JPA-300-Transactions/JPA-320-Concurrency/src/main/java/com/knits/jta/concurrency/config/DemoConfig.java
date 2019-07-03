@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 import com.knits.jta.common.config.JpaContext;
 
 @Configuration
-@PropertySource("classpath:jta-320-demo.properties")
+//@PropertySource("classpath:jta-320-demo.properties")
 @Import({JpaContext.class})
 @ComponentScan(basePackages = { "com.knits.jta.concurrency.services" })
 public class DemoConfig {

@@ -2,9 +2,18 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.knits.jpa</groupId>
-    <artifactId>JPA-000-Master</artifactId>
+    <artifactId>JPA-300-Transactions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>JPA-410-HQL</artifactId>
-  <name>JPA-410-HQL</name>
+  <artifactId>JPA-315-JSE-Transactions</artifactId>
+  <name>JPA-315-JSE-Transactions</name>
+  
+    <dependencies>
+  	<dependency>
+  		<groupId>com.knits.jpa</groupId>
+  		<artifactId>JPA-305-Common</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  
 </project>
