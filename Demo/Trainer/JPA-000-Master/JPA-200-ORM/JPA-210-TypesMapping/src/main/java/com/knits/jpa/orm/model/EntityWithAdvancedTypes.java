@@ -22,12 +22,12 @@ public class EntityWithAdvancedTypes extends AbstractEntity{
 	private WeekDayEnum giorno;
 	
 	@Lob
-	private byte[] binary;
+	private byte[] binaryField;
 	
 	@Lob
-	private Blob blob;
+	private Blob blobField;
 	
 	@Lob
-	private Clob clob;
+	private Clob clobField;
 		
 }

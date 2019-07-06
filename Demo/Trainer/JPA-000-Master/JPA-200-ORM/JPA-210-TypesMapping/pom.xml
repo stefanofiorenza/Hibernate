@@ -7,4 +7,11 @@
   </parent>
   <artifactId>JPA-210-TypesMapping</artifactId>
   <name>JPA-210-TypesMapping</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.knits.jpa</groupId>
+  		<artifactId>JPA-010-Common</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
