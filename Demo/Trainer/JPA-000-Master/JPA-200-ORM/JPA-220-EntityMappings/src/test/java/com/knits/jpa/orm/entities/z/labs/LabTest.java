@@ -1,9 +1,12 @@
 package com.knits.jpa.orm.entities.z.labs;
 
+import lombok.Data;
 import org.junit.Test;
 
 import com.hibernate.bootstrap.util.AbstractJPAProgrammaticBootstrapTest;
 import com.knits.jpa.orm.entities.common.MockEntities;
+
+import javax.persistence.*;
 
 
 public class LabTest extends AbstractJPAProgrammaticBootstrapTest{
@@ -41,15 +44,28 @@ public class LabTest extends AbstractJPAProgrammaticBootstrapTest{
 	   
 	   
 	   //..define some entities as nested static classes
+	   @Table(name = "User")
+	   @Entity
+	   @Data
 	   static class User extends com.knits.jpa.orm.entities.common.User{
-			
-		   
-		   private Address address;
+
+		   @Id
+		   @GeneratedValue(strategy = GenerationType.AUTO)
+		   private Long id;
+
+		 //  private Address address;
 	   }
 
+		@Table(name = "Address")
+		@Entity
+		@Data
 	   static class Address extends com.knits.jpa.orm.entities.common.Address{
-		   
-		   private User user;
+
+			@Id
+			@GeneratedValue(strategy = GenerationType.AUTO)
+			private Long id;
+
+		   	//private User user;
 	   	
 	   }
 }

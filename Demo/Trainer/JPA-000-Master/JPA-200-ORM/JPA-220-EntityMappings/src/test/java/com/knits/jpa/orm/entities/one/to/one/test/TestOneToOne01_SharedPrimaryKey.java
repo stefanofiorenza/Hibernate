@@ -14,6 +14,7 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -29,7 +30,7 @@ public class TestOneToOne01_SharedPrimaryKey extends AbstractJPAProgrammaticBoot
 
 		private Address address;
 		private User user;
-	
+
 	   @Override
 	    protected Class<?>[] entities() {
 	        return new Class[] {
@@ -37,8 +38,8 @@ public class TestOneToOne01_SharedPrimaryKey extends AbstractJPAProgrammaticBoot
 	        		User.class
 	        };
 	    }
-	   
-	   
+
+
 	   @Before
 	   public void init() {
 		   super.init();
@@ -47,8 +48,30 @@ public class TestOneToOne01_SharedPrimaryKey extends AbstractJPAProgrammaticBoot
 		   MockEntities.fillData(address);
 		   MockEntities.fillData(user);
 	   }
-		
-	   
+
+		@After
+		public void cleanup() {
+			doInJPATransaction(entityManager -> {
+				log.info("Remove last persisted entities");
+
+				// @Review (1): If entity was persisted has id. In that case load it from DB and delete it.
+
+				if (user.getId()!=null){
+					User userInDB= entityManager.find(User.class,user.getId());
+					if(userInDB!=null){
+						entityManager.remove(userInDB);
+					}
+				}
+
+				if (address.getId()!=null){
+					Address addressInDb = entityManager.find(Address.class,address.getId());
+					if(addressInDb!=null){
+						entityManager.remove(addressInDb);
+					}
+				}
+			});
+		}
+
 	   @Test
 	   public void testTableCreations() {
 		   doInJPATransaction(entityManager -> {
@@ -62,7 +85,7 @@ public class TestOneToOne01_SharedPrimaryKey extends AbstractJPAProgrammaticBoot
 	   public void testBidirectional() {
 		   
 		   doInJPATransaction(entityManager ->{
-		   
+
 			  // @Review (1): Need to update BOTH side of relationship
 				   
 			   /*

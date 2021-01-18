@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.hibernate.bootstrap.util.AbstractJPAProgrammaticBootstrapTest;
@@ -20,6 +22,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class TestOneToOne02_FkColum extends AbstractJPAProgrammaticBootstrapTest {
+
+	private Address address;
+	private User user;
 
 	@Override
 	protected Class<?>[] entities() {
@@ -34,20 +39,23 @@ public class TestOneToOne02_FkColum extends AbstractJPAProgrammaticBootstrapTest
 		});
 	}
 
+	@Before
+	public void init() {
+		super.init();
+		address = new Address();
+		user = new User();
+		MockEntities.fillData(address);
+		MockEntities.fillData(user);
+	}
+
 	@Test
 	public void testInsertFirstTheParentEntity() {
 		doInJPATransaction(entityManager -> {
 
-			Address billingAddress = new Address();			
-			MockEntities.fillData(billingAddress);
-			
-			User user = new User();
-			MockEntities.fillData(user);
-					
-			user.setBillingAddress(billingAddress);
+			user.setBillingAddress(address);
 			entityManager.persist(user);
 			
-			entityManager.persist(billingAddress);
+			entityManager.persist(address);
 			
 
 		});
@@ -59,21 +67,25 @@ public class TestOneToOne02_FkColum extends AbstractJPAProgrammaticBootstrapTest
 		
 		doInJPATransaction(entityManager -> {
 
-			Address billingAddress = new Address();			
-			MockEntities.fillData(billingAddress);
-			
-			User user = new User();
-			MockEntities.fillData(user);
-			user.setBillingAddress(billingAddress);
+			address.setUser(user);
+			//user.setBillingAddress(address);
 
-			entityManager.persist(billingAddress); // address is parent of this relationship
+			// address is parent of this relationship
 			entityManager.persist(user);
+			entityManager.persist(address); //should be inserted first
+
 			
-			entityManager.remove(user);
-			entityManager.remove(billingAddress); // address is parent of this relationship
+
 		});
 	}
-	
+
+	@After
+	public void destroy() {
+		doInJPATransaction(entityManager -> {
+			entityManager.remove(user);
+			entityManager.remove(address);
+		});
+	}
 	
 	@Table(name = "User")
 	@Entity	

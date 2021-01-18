@@ -8,11 +8,11 @@ import com.hibernate.bootstrap.util.AbstractJPAProgrammaticBootstrapTest;
 import lombok.Data;
 
 import javax.persistence.*;
+import org.junit.Ignore;
 
 
 
-
-
+@Ignore
 public class BootstrapTest extends AbstractJPAProgrammaticBootstrapTest {
 
     @Override
@@ -26,6 +26,7 @@ public class BootstrapTest extends AbstractJPAProgrammaticBootstrapTest {
 
     @Test
     public void test() {
+
         doInJPATransaction(entityManager -> {
             for (long id = 1; id <= 3; id++) {
             	DemoTable demoTableRecord = new DemoTable();

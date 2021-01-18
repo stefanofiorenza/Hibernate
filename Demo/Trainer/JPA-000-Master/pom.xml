@@ -37,6 +37,8 @@
         <org.hamcrest.version>1.3</org.hamcrest.version>
         <mockito.version>1.9.5</mockito.version>
         <junit.version>4.12</junit.version>
+	   <h2database.version>1.4.200</h2database.version>
+
 	</properties>
 	
 	
@@ -82,9 +84,11 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>${mysql.driver}</version>
 		</dependency>
-    
-		
-  		<!-- Other libs -->	
+
+
+
+
+		<!-- Other libs -->
   		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>		
@@ -156,17 +160,28 @@
 		            <version>${mockito.version}</version>
 		            <scope>test</scope>
 		        </dependency>
+
+			<dependency>
+				<groupId>com.h2database</groupId>
+				<artifactId>h2</artifactId>
+				<version>${h2database.version}</version>
+				<scope>test</scope>
+			</dependency>
 	</dependencies>
 	
 	
   	<modules>
   		<module>JPA-010-Common</module>
-    	<module>JPA-100-Basic</module>
-    	<module>JPA-200-ORM</module>
+		<module>JPA-020-CommonTest</module>
+		<module>JPA-100-Basic</module>
+		<module>JPA-200-ORM</module>
+		<!--
+
+
     	<module>JPA-300-Transactions</module>
     	<module>JPA-400-Queries</module>
+		-->
 
-    	<module>JPA-020-CommonTest</module>
   	</modules>
 	
 </project>

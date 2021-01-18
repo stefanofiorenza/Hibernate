@@ -11,14 +11,8 @@
   
   <modules>
   	<module>JPA-210-TypesMapping</module>
-  	<module>JPA-220-OneToOne</module>  
-  	<module>JPA-230-OneToMany</module>
-  	<module>JPA-240-ManyToMany</module>  
-  	<module>JPA-250-Inheritance</module>
-  	<module>JPA-260-EmbeddedTypes</module>
-  	<module>JPA-270-CompositeId</module>
   	<module>JPA-220-EntityMappings</module>
-  	<module>JPA-230-Inheritance</module>
+  	<!-- module>JPA-230-Inheritance</module -->
   </modules>
   
     <dependencies>

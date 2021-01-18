@@ -6,11 +6,15 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>JPA-220-EntityMappings</artifactId>
+
+
   <dependencies>
+
   	<dependency>
   		<groupId>com.knits.jpa</groupId>
   		<artifactId>JPA-020-CommonTest</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+
   </dependencies>
 </project>

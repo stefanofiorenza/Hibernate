@@ -1,19 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+
+
   <parent>
     <groupId>com.knits.jpa</groupId>
     <artifactId>JPA-000-Master</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>JPA-020-CommonTest</artifactId>
-  <name>JPA-020-CommonTest</name>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>JPA-020-CommonTest</artifactId>
+     <name>JPA-020-CommonTest</name>
   
     
    <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>		
         <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>	
-  		<junit.version>4.12</junit.version>
+        <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   
   <dependencies>
@@ -22,6 +24,13 @@
             <artifactId>junit</artifactId>           
             <scope>compile</scope>
             <version>${junit.version}</version>
-        </dependency>		      
+        </dependency>
+
+      <dependency>
+          <groupId>com.h2database</groupId>
+          <artifactId>h2</artifactId>
+          <version>${h2database.version}</version>
+      </dependency>
+
 	</dependencies>	        
 </project>
