@@ -1,0 +1,25 @@
+
+
+OneToOne/OneToMany:
+
+	Parent Child relationship:
+		Which one can exist without the other?
+		Which one come first?
+		What happens if I delete one side of relationship to the other?
+		Which one should I delete first?
+
+	1) Join column on Child(Many) class
+	2) MappedBy Child
+	3) Cascade on Parent
+
+	Best Practice:
+	- Join on PrimaryId? (less readable)
+	- Cascade All
+	
+
+ManyToMany
+
+	- Avoid Cascade.All (entities have more than one meaningful connection.)
+	- 
+	
+

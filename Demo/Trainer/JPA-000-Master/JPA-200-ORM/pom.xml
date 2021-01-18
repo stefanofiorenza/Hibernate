@@ -17,6 +17,8 @@
   	<module>JPA-250-Inheritance</module>
   	<module>JPA-260-EmbeddedTypes</module>
   	<module>JPA-270-CompositeId</module>
+  	<module>JPA-220-EntityMappings</module>
+  	<module>JPA-230-Inheritance</module>
   </modules>
   
     <dependencies>
