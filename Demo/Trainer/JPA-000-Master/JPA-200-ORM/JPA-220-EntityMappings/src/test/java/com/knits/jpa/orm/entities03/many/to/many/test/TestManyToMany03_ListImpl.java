@@ -1,4 +1,4 @@
-package com.knits.jpa.orm.entities.one.to.many.test;
+package com.knits.jpa.orm.entities03.many.to.many.test;
 
 import java.io.Serializable;
 
@@ -18,7 +18,7 @@ import com.hibernate.bootstrap.util.AbstractJPAProgrammaticBootstrapTest;
 import lombok.Data;
 
 
-public class TestOneToMany03_ListImpl extends AbstractJPAProgrammaticBootstrapTest{
+public class TestManyToMany03_ListImpl extends AbstractJPAProgrammaticBootstrapTest{
 
 	   @Override
 	    protected Class<?>[] entities() {

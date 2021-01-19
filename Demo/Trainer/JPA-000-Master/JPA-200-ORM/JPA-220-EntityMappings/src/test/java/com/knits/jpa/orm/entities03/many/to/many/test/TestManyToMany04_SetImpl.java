@@ -1,4 +1,4 @@
-package com.knits.jpa.orm.entities.many.to.many.test;
+package com.knits.jpa.orm.entities03.many.to.many.test;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.knits.jpa.orm.entities.z.labs;
+package com.knits.jpa.orm.entities04.custom;
 
 import lombok.Data;
 import org.junit.Test;

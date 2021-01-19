@@ -1,6 +1,7 @@
-package com.knits.jpa.orm.entities.one.to.many.test;
+package com.knits.jpa.orm.entities02.one.to.many.test;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ import com.hibernate.bootstrap.util.AbstractJPAProgrammaticBootstrapTest;
 import lombok.Data;
 
 
-public class TestOneToMany02_LinkTable extends AbstractJPAProgrammaticBootstrapTest{
+public class TestOneToMany01_FKColumn extends AbstractJPAProgrammaticBootstrapTest{
 
 	   @Override
 	    protected Class<?>[] entities() {
@@ -42,7 +43,7 @@ public class TestOneToMany02_LinkTable extends AbstractJPAProgrammaticBootstrapT
 			   user.setFirstname("Stefano");
 			   user.setLastname("Fiorenza");
 			   user.setEmail("stefano@email.it");
-			   user.setBillingAddress(billingAddress);
+			   user.getBillingAddresses().add(billingAddress);
 			  
 			  
 			   entityManager.persist(billingAddress); //address is parent of this relationship
@@ -72,12 +73,8 @@ public class TestOneToMany02_LinkTable extends AbstractJPAProgrammaticBootstrapT
 	   @Entity
 	   @Data
 	   public static class User extends com.knits.jpa.orm.entities.common.User implements Serializable {
-	   
-		   		
-		   	@Id
-		   	@OneToOne
-		   	@JoinColumn(name = "id")
-		   	private Address billingAddress;
+	   		   
+		    	private List<Address> billingAddresses;
 
 	   }
 }

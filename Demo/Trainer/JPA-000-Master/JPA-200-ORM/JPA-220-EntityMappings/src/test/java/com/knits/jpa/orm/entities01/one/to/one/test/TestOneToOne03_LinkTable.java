@@ -1,4 +1,4 @@
-package com.knits.jpa.orm.entities.one.to.one.test;
+package com.knits.jpa.orm.entities01.one.to.one.test;
 
 import java.io.Serializable;
 
@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.hibernate.bootstrap.util.AbstractJPAProgrammaticBootstrapTest;
@@ -21,22 +23,18 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TestOneToOne03_LinkTable extends AbstractJPAProgrammaticBootstrapTest {
 
-	@Override
-	protected Class<?>[] entities() {
-		return new Class[] { Address.class, User.class };
-	}
+	
 	
 	@Test
 	public void generateTables() {
-		doInJPATransaction(entityManager -> {
-			
+		doInJPATransaction(entityManager -> {			
 			log.info("If hibernate.hbm2ddl.auto=create Or update tables will be created on bootstrap of EntityManagerFactory");
 		});
 	}
 
 	
 	
-	@Test
+	//@Test
 	public void testCrudOnEntities() {
 		
 		doInJPATransaction(entityManager -> {
@@ -87,5 +85,46 @@ public class TestOneToOne03_LinkTable extends AbstractJPAProgrammaticBootstrapTe
 
 	}
 
+	
+	private Address address;
+	private User user;
+	
+	@Override
+	protected Class<?>[] entities() {
+		return new Class[] { Address.class, User.class };
+	}
+	
+	@Before
+	public void init() {
+		super.init();
+		address = new Address();
+		user = new User();
+		MockEntities.fillData(address);
+		MockEntities.fillData(user);
+	}
+	
+	@After
+	public void cleanup() {
+		doInJPATransaction(entityManager -> {
+			log.info("Remove last persisted entities");
+
+			// @Review (1): If entity was persisted has id. In that case load it from DB and
+			// delete it.
+
+			if (user.getId() != null) {
+				User userInDB = entityManager.find(User.class, user.getId());
+				if (userInDB != null) {
+					entityManager.remove(userInDB);
+				}
+			}
+
+			if (address.getId() != null) {
+				Address addressInDb = entityManager.find(Address.class, address.getId());
+				if (addressInDb != null) {
+					entityManager.remove(addressInDb);
+				}
+			}
+		});
+	}
 
 }
