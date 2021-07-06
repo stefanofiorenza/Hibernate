@@ -1,4 +1,3 @@
-
 REFERENCE:
 
 	Hibernate
@@ -56,4 +55,14 @@ Git:
 
 	https://github.com/pkainulainen/spring-data-jpa-examples
 	
+
+
+OTHER TOPICS:
+
+Cascades
+https://vladmihalcea.com/a-beginners-guide-to-jpa-and-hibernate-cascade-types/
+
+Lazy/Eager loading
+https://www.baeldung.com/hibernate-lazy-eager-loading
+
 

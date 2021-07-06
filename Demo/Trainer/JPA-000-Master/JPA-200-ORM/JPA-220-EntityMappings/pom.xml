@@ -2,25 +2,19 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.knits.jpa</groupId>
-    <artifactId>JPA-000-Master</artifactId>
+    <artifactId>JPA-200-ORM</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>JPA-200-ORM</artifactId>
-  <name>JPA-200-ORM</name>
-  <packaging>pom</packaging>
-  
-  <modules>
-  	<module>JPA-210-TypesMapping</module>
-  	<module>JPA-220-EntityMappings</module>
-  	<!-- module>JPA-230-Inheritance</module -->
-  </modules>
-  
-    <dependencies>
+  <artifactId>JPA-220-EntityMappings</artifactId>
+
+
+  <dependencies>
+
   	<dependency>
   		<groupId>com.knits.jpa</groupId>
-  		<artifactId>JPA-010-Common</artifactId>
+  		<artifactId>JPA-020-CommonTest</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+
   </dependencies>
-  
 </project>
