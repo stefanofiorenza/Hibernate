@@ -1,6 +1,68 @@
+REFERENCE:
+
+	Hibernate
+	http://hibernate.org/orm/releases/5.4/
+	
+	Open JPA 
+	https://ci.apache.org/projects/openjpa/2.2.x/docbook/manual.html
+
+BLOGS:
+
+	thorben Janssen:
+	Blog:	https://thorben-janssen.com/tutorials/
+	Git: https://github.com/thjanssen/HibernateTips
+
+	Vlad Mihalcea
+	Blog: https://vladmihalcea.com/tutorials/hibernate/
+	Git: https://github.com/vladmihalcea/hibernate-master-class
+
+	Eugen Baeldung
+	Blog:	https://www.baeldung.com/persistence-with-spring-series
+	
+
+	HIBERNATE:
+	Blog: 	https://www.javaguides.net/p/jpa-tutorial-java-persistence-api.html
+			https://www.javaguides.net/p/hibernate-tutorial.html			
+	Git:	https://github.com/RameshMF/Hibernate-ORM-Tutorials
+	
+
+	Blog: 	https://howtodoinjava.com/hibernate-tutorials/
+	
+	Spring + JPA	
+	https://www.logicbig.com/tutorials/spring-framework/spring-orm.html
+	https://www.logicbig.com/tutorials/spring-framework/spring-data.html
+	
+
+VIDEO RESOURCES
+
+JPA:
+	
+	JPA@Janssen
+	https://www.youtube.com/playlist?list=PL50BZOuKafAYFT_F4Yris5Vj2ApwzUfmR
+	
+	JPA2.2@Janssen
+	https://www.youtube.com/playlist?list=PL50BZOuKafAY_cJ8kRUYYM0k7sWVOuiVC
+	
+	JPA@In28Minutes
+	https://www.youtube.com/watch?v=MaI0_XdpdP8&t=477s&ab_channel=in28minutesCloud%2CDevOpsandMicroservices
+
+	JPA@JavaWorld
+	https://www.youtube.com/playlist?list=PLgzDdh90-m_TKIz4JNuqh3QarIdKiTS3q
+
+
+
+Git:
+
+	https://github.com/pkainulainen/spring-data-jpa-examples
+	
+
+
+OTHER TOPICS:
+
 Cascades
 https://vladmihalcea.com/a-beginners-guide-to-jpa-and-hibernate-cascade-types/
 
 Lazy/Eager loading
 https://www.baeldung.com/hibernate-lazy-eager-loading
+
 
