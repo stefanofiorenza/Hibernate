@@ -6,3 +6,5 @@ Demo/Trainer/JPA-000-Master/JPA-420-Criteria/target/classes/META-INF/MANIFEST.MF
 **/target/**
 
 *.iml
+.idea/*
+**/.idea/**

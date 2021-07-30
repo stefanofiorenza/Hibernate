@@ -1,15 +1,12 @@
 package com.knits.jpa.orm.entities03.many.to.many.test;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import lombok.Getter;
 import org.junit.Test;
 
 import com.hibernate.bootstrap.util.AbstractJPAProgrammaticBootstrapTest;
@@ -42,10 +39,13 @@ public class TestManyToMany01_LinkTable extends AbstractJPAProgrammaticBootstrap
 			   user.setFirstname("Stefano");
 			   user.setLastname("Fiorenza");
 			   user.setEmail("stefano@email.it");
-			   user.setBillingAddress(billingAddress);
+
+
+			   //connect entities:
+			   billingAddress.getUsers().add(user);
 			  
-			  
-			   entityManager.persist(billingAddress); //address is parent of this relationship
+			  //1) Owner of relationship??
+			   entityManager.persist(billingAddress);
 			   entityManager.persist(user);
 			   
 		   });
@@ -60,11 +60,14 @@ public class TestManyToMany01_LinkTable extends AbstractJPAProgrammaticBootstrap
 		   	@Id
 		   	@GeneratedValue(strategy = GenerationType.AUTO)
 		   	private Long id;
-		 
-		   	
-		   	@OneToOne(mappedBy = "billingAddress")
-		   	private User user;
-	   		
+
+			@ManyToMany(cascade = CascadeType.ALL)
+			@JoinTable(name = "user_address",
+					joinColumns = @JoinColumn(name = "address_id"),
+					inverseJoinColumns = @JoinColumn(name = "user_id")
+			)
+			@Getter
+			private List<User> users= new ArrayList<>();
 	   }
 
 
@@ -72,12 +75,10 @@ public class TestManyToMany01_LinkTable extends AbstractJPAProgrammaticBootstrap
 	   @Entity
 	   @Data
 	   public static class User extends com.knits.jpa.orm.entities.common.User implements Serializable {
-	   
-		   		
-		   	@Id
-		   	@OneToOne
-		   	@JoinColumn(name = "id")
-		   	private Address billingAddress;
+
+		  	@ManyToMany(mappedBy = "users")
+			@Getter
+			private List<Address> billingAddress= new ArrayList<>();
 
 	   }
 }
