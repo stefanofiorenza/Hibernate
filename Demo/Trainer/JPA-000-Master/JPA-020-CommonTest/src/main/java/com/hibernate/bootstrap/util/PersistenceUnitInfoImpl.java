@@ -14,9 +14,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
-/**
- * @author Vlad Mihalcea
- */
 public class PersistenceUnitInfoImpl implements PersistenceUnitInfo {
 
     public static final String JPA_VERSION = "2.1";
