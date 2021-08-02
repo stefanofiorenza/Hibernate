@@ -37,7 +37,7 @@
 	</logger>
     
 
-	<logger name="com.knits.jpa" additivity="false">
+	<logger name="test.orm.core" additivity="false">
 		<level value="INFO" />
 		<appender-ref ref="dailyRollingFileAppender"/>
 		<appender-ref ref="consoleAppender" />
