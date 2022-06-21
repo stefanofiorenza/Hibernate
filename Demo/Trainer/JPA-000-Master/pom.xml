@@ -16,7 +16,7 @@
 		<hibernate.jpa.version>5.4.3.Final</hibernate.jpa.version>
 		<jpa.version>2.2</jpa.version>
 		
-		<mysql.driver>8.0.17</mysql.driver>  	  
+		<mysql.driver>8.0.28</mysql.driver>  	  
 		<derbyclient.version>10.12.1.1</derbyclient.version>
 		<hikari.version>2.6.1</hikari.version>
 
